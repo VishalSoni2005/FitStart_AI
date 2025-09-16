@@ -2,38 +2,35 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 
-# Load trained model
-model = joblib.load("calorie_predictor.pkl")
+# Load model
+model = joblib.load("models/calorie_model.pkl")
 
 # Initialize app
 app = FastAPI(title="Calorie Burn Prediction API")
 
-# Define request body
+# Define request schema
 class UserInput(BaseModel):
-    Age: int
-    Height: float
-    Weight: float
-    Duration: float
-    Heart_Rate: float
-    Body_Temp: float
+    age: int
+    height: float
+    weight: float
+    duration: float
+    heart_rate: float
+    body_temp: float
 
 @app.post("/predict_calories")
 def predict_calories(data: UserInput):
-    # Convert input into model format
     features = [[
-        data.Age,
-        data.Height,
-        data.Weight,
-        data.Duration,
-        data.Heart_Rate,
-        data.Body_Temp
+        data.age,
+        data.height,
+        data.weight,
+        data.duration,
+        data.heart_rate,
+        data.body_temp
     ]]
 
-    # Prediction
     prediction = model.predict(features)[0]
 
-    # Response JSON
     return {
-        "Calories_Burned": round(float(prediction), 2),
+        "calories_burned": round(float(prediction), 2),
         "status": "success"
     }

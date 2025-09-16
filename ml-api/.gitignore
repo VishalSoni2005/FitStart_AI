@@ -1,55 +1,41 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
 
-# Dependency directories
-node_modules/
-custom_env/
-
-# Python virtual environments
+# Virtual environments
 venv/
-venv
 .env/
-.envrc
-*.env
+.venv/
+env/
 
-# Jupyter Notebook
+# Jupyter
 .ipynb_checkpoints/
+.virtual_documents/
+*.ipynb_save
 
-# Build output
-dist/
-dist-ssr/
-build/
-*.local
+# VSCode / Editors
+.vscode/
+.idea/
 
-# Operating system files
+# OS files
 .DS_Store
 Thumbs.db
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Logs and temp files
+*.log
+*.tmp
 
-# Data & model checkpoints (optional, comment out if needed)
-*.h5
-*.ckpt
-*.pt
-*.pth
-*.joblib
-*.pkl
+# Model and data (if large, else keep tracked if small)
+models/*.pkl
+# data/*
 
-# Large data files (optional)
-data/
-datasets/
-__pycache__/
+# Ignore environment config
+*.env
+
+# Optional: if you generate build/dist
+build/
+dist/
+*.egg-info/
