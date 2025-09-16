@@ -1,0 +1,20 @@
+# Make Jupyter notebooks show only source code in diffs (ignores output cells)
+*.ipynb diff=jupyternotebook
+
+# Treat Python files as text, enforce LF line endings
+*.py text eol=lf
+
+# Handle common text files
+*.txt text
+*.md  text
+
+# Binary files (don’t try to diff them)
+*.pkl binary
+*.joblib binary
+*.h5 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.csv text
+*.json text

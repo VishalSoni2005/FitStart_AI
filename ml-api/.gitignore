@@ -29,7 +29,7 @@ Thumbs.db
 *.tmp
 
 # Model and data (if large, else keep tracked if small)
-models/*.pkl
+# models/*.pkl
 # data/*
 
 # Ignore environment config
